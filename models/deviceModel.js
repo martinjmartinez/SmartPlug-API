@@ -14,11 +14,14 @@ const deviceSchema = new Schema({
     type: String,
     Required: 'Enter the ip address of the device'
   },
-  category: {
+  space: {
     type: Schema.Types.ObjectId,
-    ref: "category"
+    ref: "space"
+  },
+  building: {
+    type: Schema.Types.ObjectId,
+    ref: "building"
   }
 });
 
-const Device = mongoose.model('device', deviceSchema);
-module.exports = Device;
+module.exports = mongoose.model('device', deviceSchema);

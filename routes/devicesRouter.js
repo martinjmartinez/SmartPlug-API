@@ -14,18 +14,23 @@ router.route('/:deviceId')
         deviceController.replaceDevice)
   .patch([validateParam(schemas.idSchema, 'deviceId'),
           validateBody(schemas.deviceOptionalSchema)],
-          deviceController.updateDevice);
+          deviceController.updateDevice)
+  .delete([validateParam(schemas.idSchema, 'deviceId')],
+          deviceController.removeDevice);
 
-router.route('/:deviceId/category')
+router.route('/:deviceId/space')
   .post([validateParam(schemas.idSchema, 'deviceId'),
-        validateBody(schemas.categorySchema)],
-        deviceController.newDeviceCategory);
+        validateBody(schemas.spaceSchema)],
+        deviceController.newDeviceSpace);
 
 
-router.route('/:deviceId/category/:categoryId')
+router.route('/:deviceId/space/:spaceId')
   .post([validateParam(schemas.idSchema, 'deviceId'),
-        validateParam(schemas.idSchema, 'categoryId')],
-        deviceController.addExistingCategoryToDevice);
+        validateParam(schemas.idSchema, 'spaceId')],
+        deviceController.addExistingSpaceToDevice)
+  .delete([validateParam(schemas.idSchema, 'spaceId'),
+        validateParam(schemas.idSchema, 'deviceId')],
+        deviceController.removeSpaceFromDevice);
 
 
 module.exports = router;

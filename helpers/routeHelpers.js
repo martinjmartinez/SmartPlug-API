@@ -53,10 +53,14 @@ module.exports = {
       ip_address: Joi.string()
     }),
 
-    categorySchema: Joi.object().keys({
+    spaceSchema: Joi.object().keys({
       name: Joi.string().required(),
-      devices: Joi.array().items(Joi.string()),
-      categories: Joi.array().items(Joi.string())
+      devices: Joi.array().items(Joi.string())
+    }),
+
+    buildingSchema: Joi.object().keys({
+      name: Joi.string().required(),
+      spaces: Joi.array().items(Joi.string())
     }),
 
     idSchema: Joi.object().keys({
