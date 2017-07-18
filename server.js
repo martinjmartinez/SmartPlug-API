@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/smartPlugDB');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/smartPlugDB');
 
 const app = express();
 

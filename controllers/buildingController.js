@@ -16,7 +16,7 @@ module.exports = {
 
   getBuilding: async (req, res, next) => {
     const { buildingId } = req.value.params;
-    const building = await Building.findById(buildingId).populate('spaces');
+    const building = await Building.findById(buildingId).populate({path: 'spaces', populate: {path: "devices", model: "device"}});
 
     res.status(200).json(building);
   },
@@ -39,7 +39,7 @@ module.exports = {
 
   getBuildingSpaces: async (req, res, next) => {
     const { buildingId }  = req.value.params;
-    const building = await Building.findById(buildingId).populate('spaces');
+    const building = await Building.findById(buildingId).populate({path: 'spaces', populate: {path: "devices", model: "device"}});
 
     res.status(200).json(building.spaces)
 

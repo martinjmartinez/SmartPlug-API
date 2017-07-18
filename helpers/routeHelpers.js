@@ -55,7 +55,8 @@ module.exports = {
 
     spaceSchema: Joi.object().keys({
       name: Joi.string().required(),
-      devices: Joi.array().items(Joi.string())
+      devices: Joi.array().items(Joi.string()),
+      building: Joi.string()
     }),
 
     buildingSchema: Joi.object().keys({
