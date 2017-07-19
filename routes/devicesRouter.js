@@ -32,5 +32,10 @@ router.route('/:deviceId/space/:spaceId')
         validateParam(schemas.idSchema, 'deviceId')],
         deviceController.removeSpaceFromDevice);
 
+router.route('/:deviceId/building/:buildingId')
+  .post([validateParam(schemas.idSchema, 'deviceId'),
+        validateParam(schemas.idSchema, 'buildingId')],
+        deviceController.addExistingBuildingToDevice);
+
 
 module.exports = router;

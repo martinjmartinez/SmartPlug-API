@@ -1,5 +1,6 @@
 const Device = require('../models/deviceModel');
 const Space = require('../models/spaceModel');
+const Building = require('../models/buildingModel');
 
 module.exports = {
   allDevices: async (req, res, next) => {
@@ -84,6 +85,42 @@ module.exports = {
     //Save device
     await device.save();
     await space.save()
+
+    res.status(201).json(device);
+  },
+
+  addExistingBuildingToDevice: async (req, res, next) => {
+    const { deviceId } = req.value.params;
+    const { buildingId } = req.value.params;
+    //Create new space
+    const building = await Building.findById(buildingId);
+    //Get device
+    const device = await Device.findById(deviceId);
+    //Add space to the device
+    var previousBuildId = null;
+
+    if(device.building != null){
+      previousBuildingId = device.building;
+      if (previousBuildingId != buildingId) {
+        //Get previous space
+        const previousBuilding = await Building.findById(previousBuildingId);
+        if (previousBuilding) {
+          //Remove device from previous space
+          previousBuilding.devices.pull(deviceId);
+          await previousBuilding.save();
+        }
+        //Add device to space
+        building.devices.push(deviceId);
+      }
+    } else {
+      //Add device to space
+      building.devices.push(deviceId);
+    }
+
+    device.building = building;
+    //Save device
+    await device.save();
+    await building.save()
 
     res.status(201).json(device);
   },
