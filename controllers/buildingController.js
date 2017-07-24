@@ -4,7 +4,7 @@ const Building = require('../models/buildingModel');
 
 module.exports = {
   allBuildings: async (req, res, next) => {
-    const building = await Building.find({}).populate({path: 'spaces', populate: {path: "devices", model: "device"}}, {path: 'devices'});
+    const building = await Building.find({}).populate({path: 'spaces', populate: {path: "devices", model: "device"}});
     res.status(200).json(building);
   },
 
