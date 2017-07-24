@@ -31,9 +31,9 @@ module.exports = {
 //TODO
   getBuildingDevices: async (req, res, next) => {
     const { buildingId }  = req.value.params;
-    const building = await Space.findById(buildingId).populate('devices');
+    const building = await Building.findById(buildingId).populate('devices');
 
-    res.status(200).json(space.devices)
+    res.status(200).json(building.devices)
 
   },
 
