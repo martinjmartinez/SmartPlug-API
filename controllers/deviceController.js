@@ -4,7 +4,7 @@ const Building = require('../models/buildingModel');
 
 module.exports = {
   allDevices: async (req, res, next) => {
-    const devices = await Device.find({}).populate('space');
+    const devices = await Device.find({}).populate('space building');
 
     res.status(200).json(devices);
   },
@@ -17,7 +17,7 @@ module.exports = {
 
   getDevice: async (req, res, next) => {
     const { deviceId } = req.value.params;
-    const device = await Device.findById(deviceId).populate('space');
+    const device = await Device.findById(deviceId).populate('space building');
     res.status(200).json(device);
   },
 
