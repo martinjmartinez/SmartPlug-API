@@ -12,6 +12,7 @@ const app = express();
 const devices = require('./routes/devicesRouter');
 const spaces = require('./routes/spacesRouter');
 const buildings = require('./routes/buildingsRouter');
+const histories = require('./routes/historyRouter');
 
 //Middlewares
 app.use(logger('dev'));
@@ -21,6 +22,8 @@ app.use(bodyParser.json());
 app.use('/devices', devices);
 app.use('/spaces', spaces);
 app.use('/buildings', buildings);
+app.use('/histories', histories);
+
 
 //Catch 404 Errors and forward then to error handle
 app.use((req, res, next) => {

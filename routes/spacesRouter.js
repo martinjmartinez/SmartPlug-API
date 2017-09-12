@@ -13,7 +13,7 @@ router.route('/:spaceId')
           validateBody(schemas.spaceSchema)],
           spacesController.updateSpace)
   .delete(validateParam(schemas.idSchema, 'spaceId'),
-          spacesController.removeSpace);;
+          spacesController.removeSpace);
 
 router.route('/:spaceId/devices')
   .get(validateParam(schemas.idSchema, 'spaceId'), spacesController.getSpaceDevices);

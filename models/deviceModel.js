@@ -21,7 +21,11 @@ const deviceSchema = new Schema({
   building: {
     type: Schema.Types.ObjectId,
     ref: "building"
-  }
+  },
+  histories: [{
+    type: Schema.Types.ObjectId,
+    ref: 'history'
+  }],
 });
 
 module.exports = mongoose.model('device', deviceSchema);
