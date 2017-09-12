@@ -64,10 +64,6 @@ module.exports = {
       spaces: Joi.array().items(Joi.string())
     }),
 
-    historySchema: Joi.object().keys({
-      startDate: Joi.Date()
-    }),
-
     idSchema: Joi.object().keys({
       param: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required()
     })
