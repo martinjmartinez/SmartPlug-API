@@ -13,6 +13,7 @@ module.exports = {
     //Get device
     const device = await Device.findById(deviceId);
     new_history.device = device;
+    new_history.startDate = new Date();
     const history = await new_history.save();
     res.status(201).json(history);
   },
@@ -26,6 +27,7 @@ module.exports = {
   updateHistory: async (req, res, next) => {
     const {historyId} = req.value.params;
     const new_history = req.value.body;
+    new_history.endDate = new Date();
     const result = await History.findByIdAndUpdate(historyId, new_history);
     res.status(200).json({ success: true});
   },
