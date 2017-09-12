@@ -7,7 +7,7 @@ router.route('/')
   .get(historyController.allHistories);
 
 router.route('/device/:deviceId')
-    .post(validateBody(schemas.historySchema), historyController.newHistory);
+    .post(historyController.newHistory);
 
 router.route('/:historyId')
   .get(validateParam(schemas.idSchema, 'historyId'), historyController.getHistory)
