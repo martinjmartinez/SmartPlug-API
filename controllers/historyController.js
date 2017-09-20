@@ -13,7 +13,6 @@ module.exports = {
     //Get device
     const device = await Device.findById(deviceId);
     new_history.device = device;
-    new_history.startDate = new Date();
     const history = await new_history.save();
     res.status(201).json(history);
   },

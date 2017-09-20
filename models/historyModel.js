@@ -16,9 +16,9 @@ const historySchema = new Schema({
   totalHours: {
     type: Number
   },
-  powerAverage: {
+  powerLog:[{
     type: Number
-  }
+  }]
 });
 
 module.exports = mongoose.model('history', historySchema);
