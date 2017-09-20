@@ -71,7 +71,7 @@ module.exports = {
       powerLog: Joi.array().items(Joi.number()),
       op: Joi.string(),
       path: Joi.string(),
-      value: Joi.string()
+      value: Joi.object()
     }),
 
     idSchema: Joi.object().keys({
