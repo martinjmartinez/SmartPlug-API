@@ -17,7 +17,9 @@ const historySchema = new Schema({
     type: Number
   },
   powerLog:[{
-    log: type: Number
+    log: {
+      type: Number
+    }
   }]
 });
 
