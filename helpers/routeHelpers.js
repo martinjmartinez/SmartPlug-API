@@ -68,7 +68,10 @@ module.exports = {
       device: Joi.string(),
       startDate: Joi.string(),
       endDate: Joi.string(),
-      powerLog: Joi.array().items(Joi.number())
+      powerLog: Joi.array().items(Joi.number()),
+      op: Joi.string(),
+      path: Joi.string(),
+      value: Joi.string()
     }),
 
     idSchema: Joi.object().keys({
