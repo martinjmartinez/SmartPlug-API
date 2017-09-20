@@ -68,7 +68,7 @@ module.exports = {
       device: Joi.string(),
       startDate: Joi.string(),
       endDate: Joi.string(),
-      averagePower: Joi.number()
+      powerAverage: Joi.number()
     }),
 
     idSchema: Joi.object().keys({
