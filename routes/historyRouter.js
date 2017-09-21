@@ -9,7 +9,7 @@ router.route('/')
 router.route('/device/:deviceId')
     .post([validateParam(schemas.idSchema, 'deviceId'), validateBody(schemas.historySchema)], historyController.newHistory);
 
-router.route('/:historyId/:powerValue')
+router.route('/:historyId/value/:powerValue')
   .post([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.updateHistoryLog);
 
   router.route('/:historyId')
