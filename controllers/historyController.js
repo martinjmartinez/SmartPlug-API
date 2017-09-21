@@ -28,7 +28,7 @@ module.exports = {
     const { powerValue } = req.value.params;
     console.log(powerValue);
     const history = await History.findById(historyId);
-    history.powerLog.push(powerValue);
+    history.powerLog.push(45);
     await history.save();
     res.status(200).json({ success: true});
   },
