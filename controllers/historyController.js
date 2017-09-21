@@ -24,8 +24,9 @@ module.exports = {
   },
 
   updateHistoryLog: async (req, res, next) => {
-    const {historyId} = req.value.params;
-    const {powerValue} = req.value.params;
+    const { historyId } = req.value.params;
+    const { powerValue } = req.value.params;
+    console.log(powerValue);
     const history = await History.findById(historyId);
     history.powerLog.push(powerValue);
     await history.save();
