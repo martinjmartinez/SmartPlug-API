@@ -27,13 +27,19 @@ module.exports = {
   updateHistoryLog: async (req, res, next) => {
     const { historyId } = req.value.params;
     const { powerValue } = req.value.params;
-    console.log(powerValue);
+
     const powerLog = new PowerLog();
     powerLog.log = powerValue;
-   console.log("aqui   " + powerLog.log);
     const history = await History.findById(historyId);
     history.powerLog.push(powerLog);
     await history.save();
+    res.status(200).json({ success: true});
+  },
+
+  closeHistory: async (req, res, next) => {
+    const {historyId} = req.value.params;
+    const new_history = req.value.body;
+    const result = await Device.findByIdAndUpdate(historyId, new_history);
     res.status(200).json({ success: true});
   },
 
