@@ -9,9 +9,11 @@ router.route('/')
 router.route('/device/:deviceId')
     .post([validateParam(schemas.idSchema, 'deviceId'), validateBody(schemas.historySchema)], historyController.newHistory);
 
-router.route('/:historyId')
-  .get(validateParam(schemas.idSchema, 'historyId'), historyController.getHistory)
-  .patch(validateParam(schemas.idSchema, 'historyId'),  historyController.updateHistory);
+router.route('/:historyId/:powerValue')
+  .post([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.updateHistoryLog);
+
+  router.route('/:historyId')
+    .get([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.getHistory);
 
 router.route('/:historyId/device/:deviceId')
   .post([validateParam(schemas.idSchema, 'historyId'),

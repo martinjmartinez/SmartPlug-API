@@ -23,10 +23,12 @@ module.exports = {
     res.status(200).json(history);
   },
 
-  updateHistory: async (req, res, next) => {
+  updateHistoryLog: async (req, res, next) => {
     const {historyId} = req.value.params;
-    const new_history = req.value.body;
-    const result = await History.findByIdAndUpdate(historyId, new_history);
+    const {powerValue} = req.value.params;
+    const history = await History.findById(historyId);
+    history.powerLog.push(powerValue);
+    await history.save();
     res.status(200).json({ success: true});
   },
 
