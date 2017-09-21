@@ -13,7 +13,7 @@ router.route('/:historyId/value/:powerValue')
   .post([validateParam(schemas.idSchema, 'historyId'), validateParam(schemas.powerValueSchema, 'powerValue'), validateBody(schemas.historySchema)], historyController.updateHistoryLog);
 
   router.route('/:historyId')
-    .get([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.getHistory),
+    .get([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.getHistory)
     .post([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.closeHistory);
 
 router.route('/:historyId/device/:deviceId')
