@@ -10,7 +10,7 @@ router.route('/device/:deviceId')
     .post([validateParam(schemas.idSchema, 'deviceId'), validateBody(schemas.historySchema)], historyController.newHistory);
 
 router.route('/:historyId/value/:powerValue')
-  .post([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.updateHistoryLog);
+  .post([validateParam(schemas.idSchema, 'historyId'), validateParam(schemas.powerValueSchema, 'powerValue'), validateBody(schemas.historySchema)], historyController.updateHistoryLog);
 
   router.route('/:historyId')
     .get([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.getHistory);
