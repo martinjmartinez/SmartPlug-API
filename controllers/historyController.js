@@ -1,5 +1,6 @@
 const Device = require('../models/deviceModel');
 const History = require('../models/historyModel');
+const PowerLog = require('../models/powerLogModel');
 
 module.exports = {
   allHistories: async (req, res, next) => {
@@ -27,8 +28,10 @@ module.exports = {
     const { historyId } = req.value.params;
     const { powerValue } = req.value.params;
     console.log(powerValue);
+    const powerLog = new PowerLog();
+    powerLog.log = powerValue;
     const history = await History.findById(historyId);
-    history.powerLog.push(powerValue);
+    history.powerLog.push(powerLog);
     await history.save();
     res.status(200).json({ success: true});
   },
