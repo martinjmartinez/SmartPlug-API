@@ -76,7 +76,7 @@ module.exports = {
     }),
 
     powerValueSchema: Joi.object().keys({
-      param: Joi.number().require()
+      param: Joi.number().required()
     })
   }
 }
