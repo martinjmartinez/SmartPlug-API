@@ -11,8 +11,7 @@ router.route('/device/:deviceId')
 
 router.route('/:historyId')
   .get(validateParam(schemas.idSchema, 'historyId'), historyController.getHistory)
-  .patch(validateParam(schemas.idSchema, 'historyId'),
-          historyController.updateHistory);
+  .patch(validateParam(schemas.idSchema, 'historyId'),  historyController.updateHistory);
 
 router.route('/:historyId/device/:deviceId')
   .post([validateParam(schemas.idSchema, 'historyId'),

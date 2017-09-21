@@ -26,7 +26,6 @@ module.exports = {
   updateHistory: async (req, res, next) => {
     const {historyId} = req.value.params;
     const new_history = req.value.body;
-    new_history.endDate = new Date();
     const result = await History.findByIdAndUpdate(historyId, new_history);
     res.status(200).json({ success: true});
   },
