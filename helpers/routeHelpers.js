@@ -50,7 +50,8 @@ module.exports = {
     deviceOptionalSchema: Joi.object().keys({
       name: Joi.string(),
       status: Joi.boolean(),
-      ip_address: Joi.string()
+      ip_address: Joi.string(),
+      lastHistoryId: Joi.string()
     }),
 
     spaceSchema: Joi.object().keys({
