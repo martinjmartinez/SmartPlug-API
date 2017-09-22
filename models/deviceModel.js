@@ -26,6 +26,9 @@ const deviceSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'history'
   }],
+  lastHistoryId: {
+    type: String
+  },
 });
 
 module.exports = mongoose.model('device', deviceSchema);
