@@ -39,7 +39,7 @@ module.exports = {
   closeHistory: async (req, res, next) => {
     const {historyId} = req.value.params;
     const new_history = req.value.body;
-    const result = await Device.findByIdAndUpdate(historyId, new_history);
+    const result = await History.findByIdAndUpdate(historyId, new_history);
     res.status(200).json({ success: true});
   },
 
