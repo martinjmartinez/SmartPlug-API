@@ -14,7 +14,7 @@ router.route('/:historyId/value/:powerValue')
 
   router.route('/:historyId')
     .get([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.getHistory)
-    .post([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.closeHistory);
+    .patch([validateParam(schemas.idSchema, 'historyId'), validateBody(schemas.historySchema)], historyController.closeHistory);
 
 router.route('/:historyId/device/:deviceId')
   .post([validateParam(schemas.idSchema, 'historyId'),
