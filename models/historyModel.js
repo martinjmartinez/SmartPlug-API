@@ -7,11 +7,11 @@ const historySchema = new Schema({
     ref: "device"
   },
   startDate: {
-      type: Date,
+      type: String,
       Required: 'Enter the start date'
   },
   endDate: {
-    type: Date
+    type: String
   },
   totalHours: {
     type: Number
