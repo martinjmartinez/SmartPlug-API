@@ -10,7 +10,7 @@ const deviceSchema = new Schema({
       type: Boolean,
       Required: 'Enter status of the device'
   },
-  arduinoId: {
+  ip_address: {
     type: String,
     Required: 'Enter the ip address of the device'
   },
