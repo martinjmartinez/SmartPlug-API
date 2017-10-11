@@ -16,7 +16,7 @@ module.exports = {
     new_history.device = device;
 
     const history = await new_history.save();
-    device.lastHistoryId = history;
+    device.lastHistoryId = history._id;
     await device.save();
     res.status(201).json(history);
   },
