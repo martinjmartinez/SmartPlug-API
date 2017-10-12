@@ -44,7 +44,9 @@ module.exports = {
     deviceSchema: Joi.object().keys({
       name: Joi.string().required(),
       status: Joi.boolean().required(),
-      ip_address: Joi.string().required()
+      ip_address: Joi.string().required(),
+      building: Joi.string().required(),
+      space: Joi.string().require()
     }),
 
     deviceOptionalSchema: Joi.object().keys({
