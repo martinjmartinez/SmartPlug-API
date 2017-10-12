@@ -46,7 +46,7 @@ module.exports = {
       status: Joi.boolean().required(),
       ip_address: Joi.string().required(),
       building: Joi.string().required(),
-      space: Joi.string().require()
+      space: Joi.string().required()
     }),
 
     deviceOptionalSchema: Joi.object().keys({
