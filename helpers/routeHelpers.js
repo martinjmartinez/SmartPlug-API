@@ -53,7 +53,8 @@ module.exports = {
       name: Joi.string(),
       status: Joi.boolean(),
       ip_address: Joi.string(),
-      lastHistoryId: Joi.string()
+      building: Joi.string(),
+      space: Joi.string()
     }),
 
     spaceSchema: Joi.object().keys({
