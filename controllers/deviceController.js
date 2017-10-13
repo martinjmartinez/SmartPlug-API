@@ -152,14 +152,6 @@ module.exports = {
     if (!device) {
       return res.status(404).json({error: 'Device doesn\'t exist'});
     }
-    //Add space to the device
-    const spaceId = device.space;
-    //Get space
-    const space = await Space.findById(spaceId);
-    //Remove device from space
-    space.devices.pull(device);
-    //Save space
-    await space.save();
     //Remove device
     await device.remove();
 
