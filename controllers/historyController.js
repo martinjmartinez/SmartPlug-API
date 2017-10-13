@@ -43,10 +43,10 @@ module.exports = {
     const {historyId} = req.value.params;
     const new_history = req.value.body;
     const result = await History.findByIdAndUpdate(historyId, new_history);
-    const newHistory = await result.save();
     const device = await Device.findById(result.device);
     device.histories.push(result);
     await device.save();
+    const newHistory = await result.save();
     res.status(201).json(newHistory);
   },
 
