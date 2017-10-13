@@ -33,7 +33,6 @@ module.exports = {
         if (!req.value['body']){
           req.value['body'] = {};
         }
-
         req.value['body'] = result.value;
         next();
       }
@@ -46,7 +45,8 @@ module.exports = {
       status: Joi.boolean().required(),
       ip_address: Joi.string().required(),
       building: Joi.string().required(),
-      space: Joi.string()
+      space: Joi.string(),
+      powerAverage: Joi.number()
     }),
 
     deviceOptionalSchema: Joi.object().keys({
@@ -54,7 +54,8 @@ module.exports = {
       status: Joi.boolean(),
       ip_address: Joi.string(),
       building: Joi.string(),
-      space: Joi.string()
+      space: Joi.string(),
+      powerAverage: Joi.number()
     }),
 
     spaceSchema: Joi.object().keys({
