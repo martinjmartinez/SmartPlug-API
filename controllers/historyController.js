@@ -4,7 +4,7 @@ const PowerLog = require('../models/powerLogModel');
 
 module.exports = {
   allHistories: async (req, res, next) => {
-    const hitories = await History.find({}).populate('device');
+    const hitories = await History.find({});
     res.status(200).json(hitories);
   },
 
@@ -23,7 +23,7 @@ module.exports = {
 
   getHistory: async (req, res, next) => {
     const { historyId } = req.value.params;
-    const history = await History.findById(historyId).populate('device');
+    const history = await History.findById(historyId);
     res.status(200).json(history);
   },
 
@@ -46,7 +46,7 @@ module.exports = {
     const device = await Device.findById(result.device);
     device.histories.push(result);
     await device.save();
-    res.status(200).json({ success: true});
+    res.status(200).json(result);
   },
 
   addHistoryToDevice: async (req, res, next) => {
