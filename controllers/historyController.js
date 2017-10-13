@@ -47,7 +47,7 @@ module.exports = {
     const device = await Device.findById(result.device);
     device.histories.push(result);
     await device.save();
-    res.status(200).json(newHistory);
+    res.status(201).json(newHistory);
   },
 
   addHistoryToDevice: async (req, res, next) => {
