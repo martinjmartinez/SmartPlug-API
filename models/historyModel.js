@@ -18,7 +18,10 @@ const historySchema = new Schema({
   },
   powerLog:[{
     log: Number
-  }]
+  }],
+  powerAverage: {
+    type: Number
+  }
 });
 
 module.exports = mongoose.model('history', historySchema);
