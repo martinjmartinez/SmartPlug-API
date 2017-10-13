@@ -29,6 +29,9 @@ const deviceSchema = new Schema({
   lastHistoryId: {
     type: String
   },
+  powerAverage: {
+    type: Number
+  }
 });
 
 module.exports = mongoose.model('device', deviceSchema);
