@@ -155,7 +155,7 @@ module.exports = {
     //Add space to the device
     const spaceId = device.space;
     //Get space
-    if (spaceId != nulll) {
+    if (spaceId != null) {
       const space = await Space.findById(spaceId);
       //Remove device from space
       space.devices.pull(device);
