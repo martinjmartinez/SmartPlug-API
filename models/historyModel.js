@@ -6,10 +6,6 @@ const historySchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "device"
   },
-  building: {
-    type: Schema.Types.ObjectId,
-    ref: "building"
-  },
   startDate: {
       type: String,
       Required: 'Enter the start date'
