@@ -71,6 +71,7 @@ module.exports = {
 
     historySchema: Joi.object().keys({
       device: Joi.string(),
+      building: Joi.string(),
       startDate: Joi.string(),
       endDate: Joi.string(),
       powerLog: Joi.array().items(Joi.number()),

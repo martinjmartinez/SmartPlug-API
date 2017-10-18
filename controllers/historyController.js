@@ -14,7 +14,7 @@ module.exports = {
     //Get device
     const device = await Device.findById(deviceId);
     new_history.device = device;
-
+    new_history.building = device.building;
     const history = await new_history.save();
     device.lastHistoryId = history._id;
     await device.save();
