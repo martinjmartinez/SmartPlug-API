@@ -82,8 +82,7 @@ module.exports = {
     }),
 
     powerValueSchema: Joi.object().keys({
-      date: Joi.string(),
-      log: Joi.number()
+      param: Joi.number().required()
     })
   }
 }
