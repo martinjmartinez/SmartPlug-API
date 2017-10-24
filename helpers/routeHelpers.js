@@ -60,14 +60,14 @@ module.exports = {
     }),
 
     spaceSchema: Joi.object().keys({
-      name: Joi.string().required(),
+      name: Joi.string(),
       devices: Joi.array().items(Joi.string()),
       isActive: Joi.string(),
       building: Joi.string()
     }),
 
     buildingSchema: Joi.object().keys({
-      name: Joi.string().required(),
+      name: Joi.string(),
       isActive: Joi.string(),
       spaces: Joi.array().items(Joi.string())
     }),
