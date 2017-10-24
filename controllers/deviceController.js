@@ -12,6 +12,7 @@ module.exports = {
   newDevice: async (req, res, next) => {
     const new_device = new Device(req.value.body);
     new_device.powerAverage = 0.0;
+    new_device.isActive = true;
     const device = await new_device.save();
     res.status(201).json(device);
   },

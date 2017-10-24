@@ -10,6 +10,7 @@ module.exports = {
 
   newBuilding: async (req, res, next) => {
     const new_building = new Building(req.value.body);
+    building.isActive = true;
     const building = await new_building.save();
     res.status(201).json(building);
   },

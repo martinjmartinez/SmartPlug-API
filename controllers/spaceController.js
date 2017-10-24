@@ -10,6 +10,7 @@ module.exports = {
 
   newSpace: async (req, res, next) => {
     const new_space = new Space(req.value.body);
+    new_space.isActive = true;
     const space = await new_space.save();
     res.status(201).json(space);
   },

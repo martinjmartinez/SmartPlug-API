@@ -5,7 +5,6 @@ const powerLogSchema = new Schema({
   date: {
       type: Date
   },
-
   log:{
     type: Number,
     Required: 'Enter the power value'

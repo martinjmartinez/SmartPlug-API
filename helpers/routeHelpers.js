@@ -45,6 +45,7 @@ module.exports = {
       status: Joi.boolean().required(),
       ip_address: Joi.string().required(),
       building: Joi.string().required(),
+      isActive: Joi.string(),
       space: Joi.string(),
       powerAverage: Joi.number()
     }),
@@ -61,11 +62,13 @@ module.exports = {
     spaceSchema: Joi.object().keys({
       name: Joi.string().required(),
       devices: Joi.array().items(Joi.string()),
+      isActive: Joi.string(),
       building: Joi.string()
     }),
 
     buildingSchema: Joi.object().keys({
       name: Joi.string().required(),
+      isActive: Joi.string(),
       spaces: Joi.array().items(Joi.string())
     }),
 

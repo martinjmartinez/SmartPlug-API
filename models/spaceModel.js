@@ -8,6 +8,10 @@ var spaceSchema = new Schema({
     type: String,
     Required: 'Enter the name of the space'
   },
+  isActive: {
+      type: Boolean,
+      Required: 'Enter delete status of the space'
+  },
   building: {
     type: Schema.Types.ObjectId,
     ref: "building"
