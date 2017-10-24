@@ -8,8 +8,7 @@ var buildingSchema = new Schema({
     Required: 'Enter the name of the building'
   },
   isActive: {
-      type: Boolean,
-      Required: 'Enter delete status of the building'
+      type: Boolean
   },
   spaces: [{
     type: Schema.Types.ObjectId,

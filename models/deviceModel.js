@@ -11,8 +11,7 @@ const deviceSchema = new Schema({
       Required: 'Enter status of the device'
   },
   isActive: {
-      type: Boolean,
-      Required: 'Enter delete status of the device'
+      type: Boolean
   },
   ip_address: {
     type: String,

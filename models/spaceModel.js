@@ -9,8 +9,7 @@ var spaceSchema = new Schema({
     Required: 'Enter the name of the space'
   },
   isActive: {
-      type: Boolean,
-      Required: 'Enter delete status of the space'
+      type: Boolean
   },
   building: {
     type: Schema.Types.ObjectId,
