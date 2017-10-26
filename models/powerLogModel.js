@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const powerLogSchema = new Schema({
   date: {
-      type: Date
+      type: Date,
+      default: Date.now
   },
   log:{
     type: Number,
