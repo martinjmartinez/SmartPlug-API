@@ -33,7 +33,6 @@ module.exports = {
 
     const powerLog = new PowerLog();
     powerLog.log = powerValue;
-    powerLog.date = Date.now;
     const history = await History.findById(historyId);
     history.powerLog.push(powerLog);
     await history.save();
